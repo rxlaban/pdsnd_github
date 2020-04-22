@@ -14,5 +14,6 @@ washington.csv
 chicago.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+https://github.com/GoogleChrome/lighthouse
+https://medium.com/@steveamaza/how-to-write-a-proper-git-commit-message-e028865e5791
 
