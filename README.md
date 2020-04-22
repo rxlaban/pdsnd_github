@@ -2,7 +2,7 @@
 22nd April, 2020.
 
 ### Project Title
-Udacity Data Science Nano Degree Final Project(bikeshare)
+Udacity Data Science NanoDegree Final Project(bikeshare)
 
 ### Description
 This is a Project to analyze bikeshare data from three US cities.
