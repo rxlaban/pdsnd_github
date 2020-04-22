@@ -5,7 +5,7 @@
 Udacity Data Science Nano Degree Final Project(bikeshare)
 
 ### Description
-Describe what your project is about and what it does
+This is a project to analyze bikeshare data from three US cities.
 
 ### Files used
 Include the files used
