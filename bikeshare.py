@@ -11,6 +11,8 @@ import time
 
 def get_city():
     '''Asks the user for a city and returns the filename for that city's bike share data.
+    Args:
+        none.
     Returns:
         (str) Filename for a city's bikeshare data.
     '''
@@ -31,6 +33,8 @@ def get_city():
 
 def get_time_period():
     '''Asks the user for a time period and returns the specified filter.
+    Args:
+        none.
     Returns:
         (str) Time filter for the bikeshare data.
     '''
@@ -44,6 +48,8 @@ def get_time_period():
 
 def get_month():
     '''Asks the user for a month and returns the specified month.
+    Args:
+        none.
     Returns:
         (tuple) Lower limit, upper limit of month for the bikeshare data.
     '''
@@ -61,6 +67,8 @@ def get_month():
 
 def get_day():
     '''Asks the user for a day and returns the specified day.
+    Args:
+        none.
     Returns:
         (tuple) Lower limit, upper limit of date for the bikeshare data.
     '''
@@ -90,6 +98,8 @@ def popular_month(df):
     '''Finds and prints the most popular month for start time.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     months = ['January', 'February', 'March', 'April', 'May', 'June']
     index = int(df['start_time'].dt.month.mode())
@@ -100,6 +110,8 @@ def popular_day(df):
     '''Finds and prints the most popular day of week (Monday, Tuesday, etc.) for start time.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
                     'Saturday', 'Sunday']
@@ -111,6 +123,8 @@ def popular_hour(df):
     '''Finds and prints the most popular hour of day for start time.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     most_pop_hour = int(df['start_time'].dt.hour.mode())
     if most_pop_hour == 0:
@@ -129,6 +143,8 @@ def trip_duration(df):
        hours, minutes, and seconds.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     total_duration = df['trip_duration'].sum()
     minute, second = divmod(total_duration, 60)
@@ -148,6 +164,8 @@ def popular_stations(df):
     '''Finds and prints the most popular start station and most popular end station.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     pop_start = df['start_station'].mode().to_string(index = False)
     pop_end = df['end_station'].mode().to_string(index = False)
@@ -158,6 +176,8 @@ def popular_trip(df):
     '''Finds and prints the most popular trip.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     most_pop_trip = df['journey'].mode().to_string(index = False)
     # The 'journey' column is created in the statistics() function.
@@ -167,6 +187,8 @@ def users(df):
     '''Finds and prints the counts of each user type.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     subs = df.query('user_type == "Subscriber"').user_type.count()
     cust = df.query('user_type == "Customer"').user_type.count()
@@ -176,6 +198,8 @@ def gender(df):
     '''Finds and prints the counts of gender.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     male_count = df.query('gender == "Male"').gender.count()
     female_count = df.query('gender == "Male"').gender.count()
@@ -186,6 +210,8 @@ def birth_years(df):
         youngest user), and most popular birth years.
     Args:
         bikeshare dataframe
+    Returns:
+        none
     '''
     earliest = int(df['birth_year'].min())
     latest = int(df['birth_year'].max())
@@ -199,6 +225,8 @@ def display_data(df):
     continuing asking until they say stop.
     Args:
         data frame
+    Returns:
+        none
     '''
     def is_valid(display):
         if display.lower() in ['yes', 'no']:
@@ -243,6 +271,10 @@ def display_data(df):
 def statistics():
     '''Calculates and prints out the descriptive statistics about a city and
     time period specified by the user via raw input.
+    Args:
+        none.
+    Returns:
+        none.
     '''
     # Filter by city (Chicago, New York, Washington)
     city = get_city()
